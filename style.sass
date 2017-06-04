@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Quicksand')
+
+=grid($prefix)
+	@for $i from 1 through $columns
+		.#{$prefix}-#{$i}
+			width: 100% / $columns * $i
+			
+$columns: 12
+			
+.clearfix 
+	&:before, 
+	&:after
+		content: " "
+		display: table
+		clear: both
+
+*
+	box-sizing: border-box
+
+$color-gray: #313234
+
+$color-social-icons:  #064B99
+
+$color-button-film: #10B516
+
+$color-button-camera: #048FD4
+
+$color-button-newspaper: #E39105
+
+body 
+	margin: 0
+	font-family: Quicksand
+
+[class*="col-"]
+	float: left
+	min-height: 1px
+	position: relative
+	padding: 0px 10px
+
+.container 
+	margin: 0 auto
+	max-width: 1200px
+
+
+section.container 
+	margin: 50px auto
+
+
+.row
+	@extend .clearfix
+
+
+header 
+	background-color: $color-gray
+	min-height: 50px
+
+	nav 
+		ul 
+			padding: 0
+			margin: 0
+			list-style-type: none
+			float: right
+	
+		li 
+			display: inline-block
+			float: right
+	
+		a 
+			color: white
+			width: 100px
+			text-align: center
+			text-decoration: none
+			padding: 0 20px
+			line-height: 50px
+			display: block
+			transition: 0.5s
+			&:hover 
+				background: lighten( $color-gray, 35% )
+				color: black
+				display: block
+	
+		img 
+			padding-top: 10px
+
+
+.hero 
+	height: 350px
+	background: url(https://images.pexels.com/photos/206728/pexels-photo-206728.jpeg?h=350&auto=compress&cs=tinysrgb) center/cover
+
+	.slogan 
+		width: 600px
+		margin-top: 125px
+		background-color: rgba(0, 0, 0, 0.5)
+		float: right
+		text-align: center
+		height: 100px
+		line-height: 100px
+	
+		h1 
+			font-family: Francois One
+			color: white
+			margin: 0
+
++grid('col')
